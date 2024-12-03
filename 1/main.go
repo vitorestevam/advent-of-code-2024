@@ -3,10 +3,13 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"slices"
 	"strconv"
 	"strings"
+
+	"github.com.br/vitorestevam/adventofcode2024/commons"
 )
 
 func parseInput(file *os.File) ([]int, []int) {
@@ -33,7 +36,7 @@ func parseInput(file *os.File) ([]int, []int) {
 }
 
 func main() {
-	file, err := os.Open("./input_small.txt")
+	file, err := os.Open("./input.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -45,5 +48,24 @@ func main() {
 
 	fmt.Println(a, b)
 
-	diff := []int{}
+	diffs := []int{}
+
+	for i := range a {
+		n1 := a[i]
+		n2 := b[i]
+
+		diff := n1 - n2
+
+		diff = int(math.Abs(float64(diff)))
+
+		diffs = append(diffs, diff)
+	}
+
+	fn := func(a, b int) int {
+		return a + b
+	}
+
+	sum := commons.Reduce(diffs, fn)
+
+	fmt.Println(sum)
 }
