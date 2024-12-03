@@ -4,4 +4,4 @@
 
 ## How to run
 
-I'm using go so.... Go run {day}/main.go
+I'm using Go so.... `go run {day}/main.go` should do the job by now
