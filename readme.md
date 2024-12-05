@@ -4,4 +4,4 @@
 
 ## How to run
 
-I'm using Go so.... `go run {day}/main.go` should do the job by now
+I made the challenges over the testing package, so a `go test -v .` should do the job for all days and `go test -v --run TestDay1 .` for running a single day.
