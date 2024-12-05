@@ -1,8 +1,7 @@
-package main
+package day1
 
 import (
 	"bufio"
-	"fmt"
 	"math"
 	"os"
 	"slices"
@@ -35,8 +34,8 @@ func parseInput(file *os.File) ([]int, []int) {
 	return a, b
 }
 
-func main() {
-	file, err := os.Open("./input.txt")
+func Part1(filePath string) int {
+	file, err := os.Open(filePath)
 	if err != nil {
 		panic(err)
 	}
@@ -46,8 +45,6 @@ func main() {
 	slices.Sort(a)
 	slices.Sort(b)
 
-	fmt.Println(a, b)
-
 	diffs := []int{}
 
 	for i := range a {
@@ -55,7 +52,6 @@ func main() {
 		n2 := b[i]
 
 		diff := n1 - n2
-
 		diff = int(math.Abs(float64(diff)))
 
 		diffs = append(diffs, diff)
@@ -67,5 +63,5 @@ func main() {
 
 	sum := commons.Reduce(diffs, fn)
 
-	fmt.Println(sum)
+	return sum
 }
