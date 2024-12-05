@@ -18,4 +18,14 @@ func TestDay1(t *testing.T) {
 		output := day1.Part1("day1/input.txt")
 		assert.Equal(t, expected, output)
 	})
+	t.Run("part2 - test input", func(t *testing.T) {
+		expected := 31
+		output := day1.Part2("day1/input_test.txt")
+		assert.Equal(t, expected, output)
+	})
+	t.Run("part2 - real input", func(t *testing.T) {
+		expected := 27267728
+		output := day1.Part2("day1/input.txt")
+		assert.Equal(t, expected, output)
+	})
 }
