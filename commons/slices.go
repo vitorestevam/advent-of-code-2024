@@ -1,20 +1,17 @@
 package commons
 
-func Map[t any](a []t, f func(t) t) []t {
+func Map[i any, o any](a []i, f func(i) o) []o {
+	b := make([]o, len(a))
 	for i, entry := range a {
-		a[i] = f(entry)
+		b[i] = f(entry)
 	}
 
-	return a
+	return b
 }
 
 func Reduce[t comparable](a []t, f func(t, t) t) t {
 	var result t
 	for _, v := range a {
-		// if i == 0 {
-		// 	continue
-		// }
-
 		result = f(result, v)
 	}
 
