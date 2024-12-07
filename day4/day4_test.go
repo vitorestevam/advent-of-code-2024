@@ -21,7 +21,7 @@ func TestPart1(t *testing.T) {
 
 func TestPart2(t *testing.T) {
 	t.Run("test input", func(t *testing.T) {
-		expected := 14
+		expected := 9
 		output := Part2("input_test.txt")
 		assert.Equal(t, expected, output)
 	})

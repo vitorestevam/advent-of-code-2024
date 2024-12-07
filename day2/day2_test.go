@@ -8,12 +8,12 @@ import (
 
 func TestPart1(t *testing.T) {
 	t.Run("part 1 - test input", func(t *testing.T) {
-		expected := 11
+		expected := 2
 		output := Part1("input_test.txt")
 		assert.Equal(t, expected, output)
 	})
 	t.Run("part 1 - real input", func(t *testing.T) {
-		expected := 1319616
+		expected := 598
 		output := Part1("input.txt")
 		assert.Equal(t, expected, output)
 	})
